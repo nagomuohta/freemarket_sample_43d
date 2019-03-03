@@ -4,10 +4,10 @@ before_action :authenticate_user!, except: [:index]
 protect_from_forgery except: [:buy_confirm, :buy]
 
   def index
-    @ladys = Product.where(category_id:"1").order('id DESC').limit(4)
-    @mens = Product.where(category_id:"2").order('id DESC').limit(4)
-    @kids = Product.where(category_id:"3").order('id DESC').limit(4)
-    @cosme = Product.where(category_id:"4").order('id DESC').limit(4)
+    @ladys = Product.where(category_id:"1").or(Product.where(:category_id => 14..32)).or(Product.where(:category_id => 158..335)).order('id DESC').limit(4)
+    @mens = Product.where(category_id:"2").or(Product.where(:category_id => 33..46)).or(Product.where(:category_id => 336..476)).order('id DESC').limit(4)
+    @kids = Product.where(category_id:"2").or(Product.where(:category_id => 47..61)).or(Product.where(:category_id => 477..594)).order('id DESC').limit(4)
+    @cosme = Product.where(category_id:"2").or(Product.where(:category_id => 93..103)).or(Product.where(:category_id => 887..962)).order('id DESC').limit(4)
     @chanel = Product.where(brand_id:"556").order('id DESC').limit(4)
     @lvmh = Product.where(brand_id:"1434").order('id DESC').limit(4)
     @burberry = Product.where(brand_id:"957").order('id DESC').limit(4)

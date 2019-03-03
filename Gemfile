@@ -81,3 +81,5 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+
+gem 'seed-fu', '~> 2.3'
