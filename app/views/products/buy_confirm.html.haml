@@ -5,7 +5,11 @@
     = form_tag("buy", method: "PATCH") do
       .products_buyconfirm_content_item
         .products_buyconfirm_content_item_image
+<<<<<<< HEAD
           = image_tag('dr', :class => "products_buyconfirm_content_item_image_content")
+=======
+          = image_tag(@product.images[0].image, :class => "products_buyconfirm_content_item_image_content")
+>>>>>>> nagomuohta/master
         %p.products_buyconfirm_content_item_name
           = @product.title
         .products_buyconfirm_content_item_form
